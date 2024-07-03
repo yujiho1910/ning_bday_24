@@ -1,10 +1,72 @@
 /* import ttf font */
 @font-face {
   font-family: 'yuji-font';
-  src: url('./Yuji-Regular.ttf') format('truetype');
+  src: url('./Yuji2-Regular.ttf') format('truetype');
 }
 
 /* use the font */
 body {
   font-family: 'yuji-font';
+  background-color: var(--color-4);
+  color: var(--color-6);
+}
+
+:root {
+    --color-1: #BC6C64;
+    --color-2: #FFBDA6;
+    --color-3: #FFE2CA;
+    --color-4: #F9EAE5;
+    --color-5: #FED1B5;
+    --color-6: #966E69;
+}
+
+h1 {
+    color: var(--color-1);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: 'yuji-font';
+    background-color: var(--color-2);
+    border: 1px solid var(--color-3);
+    color: var(--color-6);
+    padding: 10px 20px;
+    border-radius: 2rem;
+}
+
+button:hover {
+    background-color: var(--color-5);
+    border-color: var(--color-1);
+}
+
+#emoji-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2em;
+    animation: fly 2s ease-in-out forwards;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
 }
