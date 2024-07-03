@@ -1,8 +1,8 @@
 function throwEmoji() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
     const emojiContainer = document.getElementById('emoji-container');
     const emoji = document.createElement('div');
-    const flowerEmojis = ['🌸', '🌺', '🌼', '🌻', '🌷', '🌹', '💐'];
+    const flowerEmojis = ['🌻', '🌷', '💐'];
     const randomEmoji = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
     emoji.className = 'emoji';
     emoji.innerText = randomEmoji; // Choose your emoji here

@@ -9,8 +9,17 @@ body {
   font-family: 'yuji-font';
   background-color: var(--color-4);
   color: var(--color-6);
+  font-size: 1.2em;
 }
 
+.main-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+
+}
 :root {
     --color-1: #BC6C64;
     --color-2: #FFBDA6;
@@ -22,8 +31,11 @@ body {
 
 h1 {
     color: var(--color-1);
-    display: flex;
-    justify-content: center;
+    margin: 15px;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .container {
@@ -77,6 +89,7 @@ button:hover {
     max-width: 800px;
     overflow: hidden;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
 .carousel-inner {
@@ -123,4 +136,11 @@ button:hover {
 
 .carousel-control-next {
     right: 0;
+}
+
+.message {
+    width: 80%; /* Ensure the message div takes full width of its container */
+    overflow: hidden; /* Ensure no overflow */
+    word-wrap: break-word; /* Allow words to break if they exceed container width */
+    text-align: center;
 }
