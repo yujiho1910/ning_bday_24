@@ -1,0 +1,10 @@
+/* import ttf font */
+@font-face {
+  font-family: 'yuji-font';
+  src: url('./Yuji-Regular.ttf') format('truetype');
+}
+
+/* use the font */
+body {
+  font-family: 'yuji-font';
+}
