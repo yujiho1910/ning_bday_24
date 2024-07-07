@@ -1,23 +1,22 @@
 /* import ttf font */
 @font-face {
-  font-family: 'yuji-font';
-  src: url('./Yuji2-Regular.ttf') format('truetype');
+    font-family: 'yuji-font';
+    src: url('./Yuji2-Regular.ttf') format('truetype');
 }
 
 /* use the font */
 body {
-  font-family: 'yuji-font';
-  background-color: var(--color-4);
-  color: var(--color-6);
-  font-size: 1.2em;
+    font-family: 'yuji-font';
+    background-color: var(--color-4);
+    color: var(--color-6);
+    font-size: 1.2em;
 }
 
 .main-container {
     width: 100%;
     margin: 0 auto;
-    z-index: 1;
-
 }
+
 :root {
     --color-1: #BC6C64;
     --color-2: #FFBDA6;
@@ -74,9 +73,11 @@ button:hover {
         transform: translate(0, 0) scale(1);
         opacity: 1;
     }
+
     50% {
         opacity: 0.8;
     }
+
     100% {
         transform: translate(var(--x), var(--y)) scale(0);
         opacity: 0;
@@ -85,12 +86,12 @@ button:hover {
 
 .carousel {
     position: relative;
-    width: 80%;
+    width: 90%;
     overflow: hidden;
     border-radius: 10px;
     margin: 0 auto;
     padding-top: 5px;
-    padding-right: 2px;
+    padding-right: 5px;
 }
 
 .carousel-inner {
@@ -140,8 +141,43 @@ button:hover {
 }
 
 .message {
-    width: 80%; /* Ensure the message div takes full width of its container */
-    overflow: hidden; /* Ensure no overflow */
-    word-wrap: break-word; /* Allow words to break if they exceed container width */
+    width: 80%;
+    /* Ensure the message div takes full width of its container */
+    overflow: hidden;
+    /* Ensure no overflow */
+    word-wrap: break-word;
+    /* Allow words to break if they exceed container width */
     text-align: center;
+}
+
+.message > p {
+    line-height: 1.6; /* Increase the vertical space between lines */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--color-4);
+    color: var(--color-6);
+    font-size: 0.8em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        width: 750px;
+        margin: 15px auto;
+        font-size: 3rem;
+    }
+
+    .message {
+        width: 750px;
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        width: 1000px;
+    }
 }
