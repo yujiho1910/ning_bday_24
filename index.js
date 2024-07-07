@@ -1,31 +1,58 @@
 function throwEmoji() {
     for (let i = 0; i < 3; i++) {
-    const emojiContainer = document.getElementById('emoji-container');
-    const emoji = document.createElement('div');
-    const flowerEmojis = ['🌻', '🌷', '💐'];
-    const randomEmoji = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
-    emoji.className = 'emoji';
-    emoji.innerText = randomEmoji; // Choose your emoji here
+        const emojiContainer = document.getElementById('emoji-container');
+        const emoji = document.createElement('div');
+        const flowerEmojis = ['🌻', '🌷', '💐'];
+        const randomEmoji = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
+        emoji.className = 'emoji';
+        emoji.innerText = randomEmoji; // Choose your emoji here
 
-    // Set random position and direction
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    const endX = (Math.random() - 0.5) * 200; // Adjust range for X movement
-    const endY = -Math.random() * window.innerHeight; // Move upwards
+        // Set random position and direction
+        const startX = Math.random() * window.innerWidth;
+        const startY = Math.random() * window.innerHeight;
+        const endX = (Math.random() - 0.5) * 200; // Adjust range for X movement
+        const endY = -Math.random() * window.innerHeight; // Move upwards
 
-    emoji.style.left = `${startX}px`;
-    emoji.style.top = `${startY}px`;
-    emoji.style.setProperty('--x', `${endX}px`);
-    emoji.style.setProperty('--y', `${endY}px`);
+        emoji.style.left = `${startX}px`;
+        emoji.style.top = `${startY}px`;
+        emoji.style.setProperty('--x', `${endX}px`);
+        emoji.style.setProperty('--y', `${endY}px`);
 
-    emojiContainer.appendChild(emoji);
+        emojiContainer.appendChild(emoji);
 
-    // Remove emoji after animation
+        // Remove emoji after animation
+        setTimeout(() => {
+            emojiContainer.removeChild(emoji);
+        }, 2000); // Match duration of animation
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lid = document.querySelector('.lid');
+    const content = document.getElementById('content');
+    const giftBox = document.getElementById('gift-box');
+    const loading = document.getElementById('loading');
+
     setTimeout(() => {
-        emojiContainer.removeChild(emoji);
-    }, 2000); // Match duration of animation
+        lid.style.transform = 'rotateX(180deg) translateY(-100px)';
+    }, 1000);
+
+    setTimeout(() => {
+        giftBox.style.display = 'none';
+        loading.style.display = 'none';
+        content.classList.remove('hidden');
+    }, 3000);
+});
+
+// scroll to the top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
-}
+
+scrollToTop();
 
 // For carousell
 let currentSlide = 0;

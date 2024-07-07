@@ -1,3 +1,4 @@
+
 /* import ttf font */
 @font-face {
     font-family: 'yuji-font';
@@ -11,6 +12,63 @@ body {
     color: var(--color-6);
     font-size: 1.2em;
 }
+
+.hidden {
+    display: none;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.gift-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-2);
+    border: 2px solid var(--color-1);
+}
+
+.lid {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-1);
+    top: 0;
+    left: 0;
+    transition: all 2s ease;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-2);
+}
+
+.ribbon-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: var(--color-3);
+    top: 90px;
+    left: 0;
+}
+
+.ribbon-vertical {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: var(--color-3);
+    top: 0;
+    left: 90px;
+}
+
 
 .main-container {
     width: 100%;
