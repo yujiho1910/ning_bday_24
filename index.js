@@ -27,7 +27,47 @@ function throwEmoji() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+let clickCount = 0;
+
+function incrementCounter() {
+    if (clickCount == 200) {
+        alert("No I'm forcing you to stop now. You have clicked 200 times. Go do something else.")
+        // make the button hidden
+        const button = document.getElementById('click-me');
+        button.style.display = 'none';
+    }
+    else if (clickCount == 100) {
+        alert("You have clicked 100 times! You can text me if you're bored you know...")
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times \nYou need help my bubs...\nJust text me okay HAHA`;
+    }
+    else if (clickCount >= 100) {
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times \nYou need help my bubs...\nJust text me okay HAHA`;
+    }
+    else if (clickCount == 50) {
+        alert('Congratulations! You have clicked 50 times! You can stop now...');
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times \nYou need help my bubs...`;
+    }
+    else if (clickCount > 50) {
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times \nYou need help my bubs...`;
+    }
+    else if (clickCount == 20) {
+        alert('Congratulations! You have clicked 20 times!');
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times`;
+    }
+    else {
+        clickCount++;
+        document.getElementById('click-counter').innerText = `Button clicked: ${clickCount} times`;
+    }
+
+    throwEmoji();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
     const lid = document.querySelector('.lid');
     const content = document.getElementById('content');
     const giftBox = document.getElementById('gift-box');
